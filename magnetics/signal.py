@@ -102,7 +102,10 @@ class Signal(object):
         Fs = 1. / (t1 - t0)
 
         # Signal
-        x = Data(self.point_name, self.shot, tmin=tlim[0], tmax=tlim[1]).y
+        if tlim is not None:
+            x = Data(self.point_name, self.shot, tmin=tlim[0], tmax=tlim[1]).y
+        else:
+            x = Data(self.point_name, self.shot).y
 
         return t0, Fs, x
 
