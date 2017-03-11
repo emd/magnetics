@@ -90,8 +90,15 @@ class Signal(object):
 
         # Timing
         # [t0] = [t1] = seconds, [Fs] = samples / s
-        t0, t1 = 1e-3 * Data(self.point_name, self.shot,
-                             tmin=tlim[0], tmax=tlim[1]).x[0][0:2]
+        if tlim is not None:
+            t0, t1 = Data(self.point_name, self.shot,
+                          tmin=tlim[0], tmax=tlim[1]).x[0][0:2]
+        else:
+            t0, t1 = Data(self.point_name, self.shot).x[0][0:2]
+
+        # Convert to SI units
+        t0 *= 1e-3
+        t1 *= 1e-3
         Fs = 1. / (t1 - t0)
 
         # Signal
