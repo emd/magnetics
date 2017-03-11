@@ -88,26 +88,24 @@ class Signal(object):
                 # convert `tlim` from seconds to ms
                 tlim *= 1e3
 
-        # Timing
-        # [t0] = [t1] = seconds, [Fs] = samples / s
+        # Load data
         if tlim is not None:
-            t0, t1 = Data(self.point_name, self.shot,
-                          tmin=tlim[0], tmax=tlim[1]).x[0][0:2]
+            d = Data(self.point_name, self.shot,
+                     tmin=tlim[0], tmax=tlim[1])
         else:
-            t0, t1 = Data(self.point_name, self.shot).x[0][0:2]
+            d = Data(self.point_name, self.shot)
 
-        # Convert to SI units
+        # Extract relevant values
+        t0, t1 = d.x[0][0:2]
+        sig = d.y
+
+        # Convert timing to SI units
+        # [t0] = [t1] = seconds, [Fs] = samples / s
         t0 *= 1e-3
         t1 *= 1e-3
         Fs = 1. / (t1 - t0)
 
-        # Signal
-        if tlim is not None:
-            x = Data(self.point_name, self.shot, tmin=tlim[0], tmax=tlim[1]).y
-        else:
-            x = Data(self.point_name, self.shot).y
-
-        return t0, Fs, x
+        return t0, Fs, sig
 
     def t(self):
         'Get times for points in `self.x`.'
