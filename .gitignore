@@ -1,0 +1,5 @@
+*.pyc
+*.swp
+build/*
+magnetics.egg-info/*
+dist/*
