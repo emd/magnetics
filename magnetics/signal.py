@@ -12,7 +12,7 @@ class Signal(object):
     '''An object corresponding to the retrieved DIII-D magnetics signal.
 
     This is essentially a convenience wrapper around DIII-D's
-    :py:class: `Data <data.Data>`.
+    :py:class:`Data <pyDatautils.data.Data>`.
 
     Attributes:
     -----------
@@ -90,10 +90,10 @@ class Signal(object):
 
         # Load data
         if tlim is not None:
-            d = Data(self.pointname, self.shot,
+            d = Data([self.pointname, '.MAG'], self.shot,
                      tmin=tlim[0], tmax=tlim[1])
         else:
-            d = Data(self.pointname, self.shot)
+            d = Data([self.pointname, '.MAG'], self.shot)
 
         # Extract relevant values
         t0, t1 = d.x[0][0:2]
