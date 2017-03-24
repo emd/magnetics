@@ -119,7 +119,9 @@ A = rd.array.Array(
     torsigs.x, torsigs.locations, Fs=torsigs.Fs, t0=torsigs.t0,
     Tens=Tens, Nreal_per_ens=Nreal_per_ens)
 
-A.plotModeNumber()
+A.plotModeNumber(
+    xlabel='$t \, [\mathrm{s}]$',
+    ylabel='$f \, [\mathrm{Hz}]$')
 
 ```
 
