@@ -7,7 +7,7 @@ config = {
     'name': 'magnetics',
     'version': '0.1',
     'packages': ['magnetics'],
-    'install_requires': ['nose', 'numpy', 'random_data'],
+    'install_requires': ['nose', 'numpy'],
     'author': 'Evan M. Davis',
     'author_email': 'emd@mit.edu',
     'url': '',
