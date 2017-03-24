@@ -126,3 +126,23 @@ A.plotModeNumber(
 ```
 
 ![mode_number_spectrum](https://raw.githubusercontent.com/emd/magnetics/master/figs/mode_number_spectrum.png)
+
+Note that the mode number is only plotted for points
+with coefficient of determination R^2 exceeding a user-specified threshold
+that can be specified on the fly.
+Further, to easily examine the fit at a given frequency and time
+(say 37.5 kHz and 1.6 s), simply use:
+```python
+# Using the object `A` created from running the above code
+A.plotSlice('theta_xy', f=37.5e3, t=1.6)
+
+```
+
+![mode_number_fit](https://raw.githubusercontent.com/emd/magnetics/master/figs/mode_number_fit.png)
+
+The error bars indicate the *random error* in the estimated cross-phase angle.
+Plotting slices of other spectral quantities
+(`'Gxy'` for cross-spectral density,
+`'gamma2xy'` for magnitude-squared coherence)
+can be similarly created by substituting the appropriate string
+in place of `'theta_xy'`.
