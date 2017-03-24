@@ -44,20 +44,7 @@ If the tests return "OK", the installation should be working.
 
 ... elsewhere:
 --------------
-Define an environmental variable `$pci_path` specifying
-the appropriate MDSplus server's tree-path definitions
-(`hermit.gat.com::/trees/pci`)
-by, for example, adding the following to your `.bashrc`
-
-    $ export pci_path='hermit.gat.com::/trees/pci'
-
-(While data is digitized on `magnetics`, it should (ideally)
-always be transferred to `hermit` prior to analysis;
-digitization and writing is very resource intensive, and
-an untimely request for data retrieval from `magnetics` could cause
-sufficient loading to result in data loss or a system crash).
-
-Now, change to the directory you'd like to download the source files to
+Change to the directory you'd like to download the source files to
 and retrieve the source files from github by typing
 
     $ git clone https://github.com/emd/magnetics.git
