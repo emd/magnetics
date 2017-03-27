@@ -5,19 +5,27 @@ from matplotlib.colors import ListedColormap
 
 try:
     from distinct_colours import get_distinct
-    distinct_colours_present = True
 except ImportError:
-    print '''
-    `distinct_colours` module not found.
+    print '\n`distinct_colours` module not found.'
 
-    This module defines color-blind-proof, distinct color schemes.
-    If you wish to use this module, please download from:
+    import os as _os
+    _dir = _os.path.dirname(__file__)
+    _url = 'https://personal.sron.nl/~pault/python/distinct_colours.py'
 
-        https://personal.sron.nl/~pault/python/distinct_colours.py
+    print '\nAttempting to download local copy of `distinct_colours`...\n'
+    _err = _os.system('wget -P %s %s' % (_dir, _url))
 
-    and place in your Python path.'''
-
-    distinct_colours_present = False
+    if not _err:
+        print 'Success!'
+        from .distinct_colours import get_distinct
+    else:
+        print '\nFailed...'
+        print ''
+        print ('`distinct_colours` defines color-blind-proof,'
+               ' distinct color schemes.')
+        print ('If you wish to use this module, please download from:')
+        print ('\n    %s' % _url)
+        print ('\nand place in your Python path.')
 
 
 def mixed_sign_mode_numbers(angular_separation=(np.pi / 4)):

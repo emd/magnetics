@@ -1,5 +1,6 @@
 *.pyc
 *.swp
+magnetics/distinct_colours.py
 build/*
 magnetics.egg-info/*
 dist/*
