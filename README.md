@@ -119,9 +119,14 @@ A = rd.array.Array(
     torsigs.x, torsigs.locations, Fs=torsigs.Fs, t0=torsigs.t0,
     Tens=Tens, Nreal_per_ens=Nreal_per_ens)
 
+cmap_mag = magnetics.colormap.positive_mode_numbers()[0]
+
 A.plotModeNumber(
     xlabel='$t \, [\mathrm{s}]$',
-    ylabel='$f \, [\mathrm{Hz}]$')
+    ylabel='$f \, [\mathrm{Hz}]$',
+    cblabel='$n$',
+    mode_number_lim=[0, 11],
+    cmap=cmap_mag)
 
 ```
 
