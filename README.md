@@ -44,6 +44,11 @@ If the tests return "OK", the installation should be working.
 
 ... elsewhere:
 --------------
+(Note that the `magnetics` package depends on Tom Osborne's `data` package;
+as this is *not* hosted on PyPI, it makes for easy generic installation
+difficult... the below steps do work on GA's Venus cluster, however,
+where Tom's `data` package is already installed.)
+
 Change to the directory you'd like to download the source files to
 and retrieve the source files from github by typing
 
