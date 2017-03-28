@@ -119,6 +119,7 @@ A = rd.array.Array(
     torsigs.x, torsigs.locations, Fs=torsigs.Fs, t0=torsigs.t0,
     Tens=Tens, Nreal_per_ens=Nreal_per_ens)
 
+# Distinct, color-blind proof colormap
 cmap_mag = magnetics.colormap.positive_mode_numbers()[0]
 
 A.plotModeNumber(
