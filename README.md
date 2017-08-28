@@ -120,7 +120,7 @@ Tens = 5e-3         # Ensemble time length, [Tens] = s
 Nreal_per_ens = 4   # Number of realizations per ensemeble
 
 # Determine mode numbers
-A = rd.array.Array(
+A = rd.array.FittedCrossPhaseArray(
     torsigs.x, torsigs.locations, Fs=torsigs.Fs, t0=torsigs.t0,
     Tens=Tens, Nreal_per_ens=Nreal_per_ens)
 
