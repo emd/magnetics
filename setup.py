@@ -5,7 +5,7 @@ except ImportError:
 
 config = {
     'name': 'magnetics',
-    'version': '0.1',
+    'version': '0.1.1',
     'packages': ['magnetics'],
     'install_requires': [
         'nose', 'numpy', 'matplotlib'],  # and T. Osborne `data`; not on PyPI
